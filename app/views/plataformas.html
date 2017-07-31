@@ -1,0 +1,9 @@
+<div class="container">
+	<div class="row">
+		<h1 class="planos-title">Escolha uma Plataforma</h1>
+		<div class="col-xs-12 col-md-4" ng-repeat="plataforma in Plataformas">
+			<plataformas-item plataforma="plataforma" botao="1"></plataformas-item>
+		</div>
+	</div>
+</div>
+<span us-spinner spinner-on="loading"></span>

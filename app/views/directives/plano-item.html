@@ -1,0 +1,10 @@
+<div class="plano" ng-class="{'hasAparelho': Ctrl.plano.aparelho}">
+	<p class="plano__sku">{{Ctrl.plano.sku}}</p>
+	<p class="plano__franquia">{{Ctrl.plano.franquia}}</p>
+	<p class="plano__valor">R$ {{Ctrl.plano.valor}}</p>
+	<p class="plano__aparelho" ng-show="Ctrl.plano.aparelho">{{Ctrl.plano.aparelho.nome}} (R$ {{Ctrl.plano.aparelho.valor}}) </p>
+	<p ng-show='Ctrl.plano.aparelho && Ctrl.plano.aparelho.numeroParcelas > 1'> {{Ctrl.plano.aparelho.numeroParcelas}} x R$ {{Ctrl.plano.aparelho.valorParcela}}</p>
+	<div class="plano__btn-wrapper">
+		<input ng-show="Ctrl.botao==1" class="plano__btn" class="btn btn-success" type="button" value="Comprar" ng-click="Ctrl.comprar(Ctrl.plano)" />
+	</div>
+</div>

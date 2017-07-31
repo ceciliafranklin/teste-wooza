@@ -1,0 +1,1 @@
+app.factory("dataService",["$rootScope","$http",function(n,e){var t={};return t.getData=function(n){return e.get(n)},t}]),app.service("planoService",function(){var n={},e={};return n.selecionarPlano=function(n){e=n},n.planoSelecionado=function(){return e},n});

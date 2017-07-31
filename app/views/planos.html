@@ -1,0 +1,10 @@
+<div class="container">
+	<div class="row">
+		<span class="breadcrumb"><a href="javascript:window.history.go(-1)"> Plataformas</a> » {{plataformaSelecionada.nome}}</span>
+		<h2 class="col-xs-12 planos-title">Planos para {{plataformaSelecionada.nome}}</h2>
+		<div ng-show="plano.ativo" ng-class="{'col-md-6' : Planos.length <= 2, 'col-md-4' : Planos.length > 2 && Planos.length < 6}" class="col-xs-12" ng-repeat="plano in Planos ">
+			<planos-item plano="plano" botao="1"></planos-item>
+		</div>
+	</div>
+</div>
+<span us-spinner spinner-on="loading"></span>

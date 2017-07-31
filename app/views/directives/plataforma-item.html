@@ -1,0 +1,8 @@
+<div class="plataforma">
+	<h3 class="plataforma__sku">{{Ctrl.plataforma.sku}}</h3>
+	<p class="plataforma__nome">{{Ctrl.plataforma.nome}}</p>
+	<p class="plataforma__descricao" ng-bind-html="Ctrl.plataforma.descricao | replacePipe"></p>
+	<div ng-show='Ctrl.botao==1' class="plataforma__btn-wrapper">
+		<a class="plataforma__btn btn" ng-click="Ctrl.selecionarPlataforma(Ctrl.plataforma)">Ver Planos</a>
+	</div>
+</div>

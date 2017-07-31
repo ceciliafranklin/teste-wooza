@@ -1,0 +1,45 @@
+<div id="dadosPessoais" class="container">
+	<div class="row">
+		<span class="breadcrumb"><a href="javascript:window.history.go(-1)"> Planos </a> » {{planoSelecionado.sku}}</span>
+		<h1 class="dados-plano-title col-xs-12">Dados do Plano</h1>
+		<form name="contatoForm">
+			<div class="col-md-4 col-xs-12" ng-show="visualizacao == 'form'">
+				<plataformas-item plataforma='plataformaSelecionada'></plataformas-item>
+				<planos-item plano="planoSelecionado"></planos-item>
+			</div>
+			<!-- Mensagem Sucesso -->
+			<div class="col-xs-12 col-md-8 alert alert-success" ng-show="visualizacao == 'feedback'">
+				<p>Seus dados foram enviados com sucesso</p>
+			</div>
+			<div class="form-contato col-xs-12 col-md-8" ng-show="visualizacao == 'form'">
+			  <input class="form-contato__nome form-control col-xs-12" type="text" name="nome" ng-required="true" ng-model="nome" placeholder="Nome"  />
+				<!-- Mensagem Para Preencher Nome -->
+				<div ng-show="contatoForm.nome.$invalid && contatoForm.nome.$dirty" class="col-xs-12 alerta clear">
+					<p>* Por favor, preencha o nome</p>
+				</div>
+				<input class="form-control col-xs-12" type="email" name="email" ng-required="true" ng-model="email" placeholder="Email" />
+				<!-- Mensagem Para Preencher Email -->
+				<div ng-show="contatoForm.email.$invalid && contatoForm.email.$dirty" class="col-xs-12 alerta clear">
+					<p>* Por favor, preencha o email</p>
+				</div>
+				<input class="form-control col-xs-12" type="text" name="dt_birth" ng-required="true" ng-model="dt_birth" placeholder="Data de Nascimento" mask='99/99/9999' />
+				<!-- Mensagem Para Preencher Data de Nascimento -->
+				<div ng-show="contatoForm.dt_birth.$invalid && contatoForm.dt_birth.$dirty" class="col-xs-12 alerta clear">
+					<p>* Por favor, preencha a data de nascimento</p>
+				</div>
+				<input class="form-control col-xs-12" type="text" name="cpf" ng-required="true" ng-model="cpf" placeholder="CPF"  mask='999.999.999-99' />
+				<!-- Mensagem Para Preencher CPF -->
+				<div ng-show="contatoForm.cpf.$invalid && contatoForm.cpf.$dirty" class="col-xs-12 alerta clear">
+					<p>* Por favor, preencha o cpf</p>
+				</div>
+				<input class="form-control col-xs-12" type="text" name="telefone" ng-required="true" ng-model="telefone" placeholder="Telefone" />
+				<!-- Mensagem Para Preencher Telefone -->
+				<div ng-show="contatoForm.telefone.$invalid && contatoForm.telefone.$dirty" class="col-xs-12 alerta clear">
+					<p>* Por favor, preencha o telefone</p>
+				</div>
+				<input class="form-contato__btn btn btn-primary pull-right" ng-disabled="contatoForm.$invalid" type="button" value="Enviar" ng-click="enviarDados()" />
+				<a class="btn btn-primary btn-voltar" href="javascript:window.history.go(-1)">Voltar</a>
+			</div>
+		</form>
+	</div>
+</div>
